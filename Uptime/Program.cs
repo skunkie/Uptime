@@ -42,15 +42,9 @@ namespace Uptime
 		{
 			DateTime lastBoot = GetLastBootTime();
 			
-			while (true)
-			{
-				TimeSpan uptime = DateTime.Now - lastBoot;
-				Console.Clear();
-				Console.WriteLine("Boot time: {0:HH:mm:ss}", lastBoot);
-				Console.WriteLine("Uptime: {0}", uptime.ToReadableString());
-
-				Thread.Sleep(1000);
-			}
+			TimeSpan uptime = DateTime.Now - lastBoot;
+			Console.WriteLine("System Boot Time: {0:dd.MM.yyyy, HH:mm:ss}", lastBoot);
+			Console.WriteLine("Uptime: {0}", uptime.ToReadableString());
 		}
 	}
 }
